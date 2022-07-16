@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# loại bỏ các file hoặc package không commit lên git
 # dependencies
 /node_modules
 /.pnp

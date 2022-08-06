@@ -1,33 +1,53 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class TableProduct extends Component {
   render() {
     return (
-      <table className='table'>
+      <table className="table">
         <thead>
-            <td>Id</td>
-            <td>Image</td>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Description</td>
-            <td>Type</td>
-            <td></td>
+          <td>Id</td>
+          <td>Image</td>
+          <td>Name</td>
+          <td>Price</td>
+          <td>Description</td>
+          <td>Type</td>
+          <td></td>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td><img src="https://picsum.photos/200/200" alt="..." /></td>
-                <td>product 1</td>
-                <td>1000</td>
-                <td>iphone 1</td>
-                <td>mobile</td>
+          {this.props.arrProduct.map((product, index) => {
+            return (
+              <tr key={index}>
+                <td>{product.id}</td>
                 <td>
-                    <button className='btn btn-danger mx-2'>Delete</button>
-                    <button className='btn btn-primary mx-2'>Edit</button>
+                  <img src={product.img} alt="..." width={150} />
                 </td>
-            </tr>
+                <td>{product.name}</td>
+                <td>{product.price}</td>
+                <td>{product.description}</td>
+                <td>{product.productType}</td>
+                <td>
+                  <button
+                    className="btn btn-danger mx-2"
+                    onClick={() => {
+                      this.props.delProduct(product.id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="btn btn-primary mx-2"
+                    onClick={() => {
+                      this.props.editProduct(product);
+                    }}
+                  >
+                    Edit
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
-    )
+    );
   }
 }

@@ -14,6 +14,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Page404 from "./pages/Page404/Page404";
 import ProductManagement from "./pages/ProductManagement/ProductManagement";
+import ReactLifeCycle from "./ReactLifeCycle/ReactLifeCycle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,7 +22,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
+      {/* địa chỉ ban đầu (vd: mypage.com) */}
       <Route path="" element={<App />}>
+        {/* địa chỉ có đường dẫn bổ sung (vd: mypage.com/home) */}
         <Route path="" element={<Home />}></Route>
         <Route path="home" element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
@@ -29,6 +32,7 @@ root.render(
         <Route path="register" element={<Register />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="reactform" element={<ProductManagement/>}></Route>
+        <Route path="lifecycle" element={<ReactLifeCycle/>}></Route>
         {/* chuyển hướng trang về trang 404 */}
         {/* <Route path="*" element={<Page404 />}></Route> */}
         

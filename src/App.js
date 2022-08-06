@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       {/* Outlet là dành cho viết các nội dung thay đổi bởi path con */}
-      {/* Các thằng con chỉ được load ở đây thôi */}
+      {/* Các thằng con chỉ được load ở Outlet thôi */}
 
       {/* isActive là giá trị mà nó tìm trên thanh địa chỉ mà */}
       {/* <NavLink/> nó "to" đến */}
